@@ -1,26 +1,91 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+// import TodoForm from './components/TodoForm/TodoForm'
+import TodoList from './components/TodoList/TodoList'
+import classes from './App.module.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+export default class App extends Component {
+  state = {
+    todoListItems: [
+      {
+        id: 1,
+        title: 'Create Todo-list-app',
+        isDone: true
+      },
+    ],
+    currentItem:{
+      id:'',
+      title:'',
+      isDone: false
+    },
+  }
+
+  toggleTodo = id => {
+    this.setState({
+      todoListItems: this.state.todoListItems.map((item) => {
+        if (item.id !== id) return item
+        return {...item, isDone: !item.isDone}
+      })
+    })
+  }
+
+  deleteTodo = id => {
+    const filteredItems = this.state.todoListItems.filter(item => item.id !== id);
+    this.setState({ todoListItems:filteredItems })
+  }
+
+  handleInput = ({target}) => {
+    this.setState({
+      currentItem: {
+        id: Date.now(),
+        title:target.value,
+        isDone: false
+      }
+    })
+  }
+
+  addTodo = (e) => {
+    e.preventDefault();
+    const newTodo = this.state.currentItem;
+    if(newTodo.text !== '') {
+      const newTodos = [...this.state.todoListItems, newTodo];
+      this.setState({
+        todoListItems: newTodos,
+        currentItem:{
+          id:'',
+          title:'',
+          isDone:false
+        },
+      })
+    }
+  }
+
+  render() {
+    return (
+      <header>
+        <div className={classes.Wrapper}>
+          <h1>Hillel</h1>
+          <span>Homework - 2</span>
+        </div>
+        <div className={classes.TodoWrapper}>
+          <h2>Todo List</h2>
+          <form className={classes.TodoForm} onSubmit={this.addTodo}>
+            <input 
+              type="text" 
+              placeholder="New Task" 
+              value={this.state.currentItem.text}
+              onChange={this.handleInput} 
+            />
+            <button>
+              <i className="fas fa-plus"></i>
+            </button>
+          </form>
+          <TodoList 
+            todos={this.state.todoListItems}
+            onToggle={this.toggleTodo}
+            onDelete={this.deleteTodo}
+          />
+        </div>
       </header>
-    </div>
-  );
+    )
+  }
 }
-
-export default App;

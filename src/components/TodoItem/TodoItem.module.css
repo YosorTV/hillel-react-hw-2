@@ -1,0 +1,48 @@
+.TodoItem {
+  font-family: 'Shadows Into Light', cursive;
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 28px;
+  letter-spacing: 4px;
+}
+
+.TodoItem:first-child {
+  padding-top: 34px;
+}
+
+.TodoItem span {
+  color:#fff;
+  opacity: 1;
+}
+
+.TodoItem button {
+  font-size: 24px;
+  background:none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: .7;
+  transition: .3s opacity ease-in-out;
+}
+
+.TodoItem button:hover {
+  opacity: 1;
+}
+
+.TodoItem button:first-child {
+  color: #54b954;
+}
+
+.TodoItem button:last-child {
+  color: #ec5555;
+}
+
+.Done {
+  transition: .3s all ease-in-out;
+  text-decoration: line-through;
+  opacity: .3 !important;
+  color: #838383 !important;
+}
