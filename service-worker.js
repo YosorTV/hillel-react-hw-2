@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hillel-react-hw-2/precache-manifest.0c8f209ce1371ab84ecde48e0f4d59ff.js"
+  "/hillel-react-hw-2/precache-manifest.28123283797a44beab58bee585dc94fc.js"
 );
 
 self.addEventListener('message', (event) => {
