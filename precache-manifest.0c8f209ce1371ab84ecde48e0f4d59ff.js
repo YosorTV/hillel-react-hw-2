@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5bbd196b6b4d745424837fe33d69ff95",
+    "revision": "e6263724364d620113cac30718bbfd7f",
     "url": "/hillel-react-hw-2/index.html"
   },
   {
-    "revision": "2e502a4776bc0909d7d1",
+    "revision": "2cc3061cac11c357452d",
     "url": "/hillel-react-hw-2/static/css/main.7ba102cf.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hillel-react-hw-2/static/js/2.68cae473.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2e502a4776bc0909d7d1",
-    "url": "/hillel-react-hw-2/static/js/main.f1fb584f.chunk.js"
+    "revision": "2cc3061cac11c357452d",
+    "url": "/hillel-react-hw-2/static/js/main.8a10b6ff.chunk.js"
   },
   {
     "revision": "32f55086406bcb9ec394",
