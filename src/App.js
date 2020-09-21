@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import TodoForm from './components/TodoForm/TodoForm'
 import TodoList from './components/TodoList/TodoList'
 import classes from './App.module.css'
 
@@ -46,7 +45,7 @@ export default class App extends Component {
   addTodo = (e) => {
     e.preventDefault();
     const newTodo = this.state.currentItem;
-    if(newTodo.text !== '') {
+    if(newTodo.title !== '') {
       const newTodos = [...this.state.todoListItems, newTodo];
       this.setState({
         todoListItems: newTodos,
@@ -57,6 +56,7 @@ export default class App extends Component {
         },
       })
     }
+
   }
 
   render() {
