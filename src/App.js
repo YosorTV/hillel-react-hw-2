@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TodoList from './components/TodoList/TodoList'
+import TodoForm from './components/TodoForm/TodoForm'
 import classes from './App.module.css'
 
 export default class App extends Component {
@@ -9,6 +10,11 @@ export default class App extends Component {
         id: 1,
         title: 'Create Todo-list-app',
         isDone: true
+      },
+      {
+        id: 2,
+        title: 'Visit lesson - 3',
+        isDone: false
       },
     ],
     currentItem:{
@@ -68,17 +74,11 @@ export default class App extends Component {
         </div>
         <div className={classes.TodoWrapper}>
           <h2>Todo List</h2>
-          <form className={classes.TodoForm} onSubmit={this.addTodo}>
-            <input 
-              type="text" 
-              placeholder="New Task" 
-              value={this.state.currentItem.text}
-              onChange={this.handleInput} 
-            />
-            <button>
-              <i className="fas fa-plus"></i>
-            </button>
-          </form>
+          <TodoForm 
+            addTodo={this.addTodo}
+            handleInput={this.handleInput}
+            task={this.state.currentItem}
+          />
           <TodoList 
             todos={this.state.todoListItems}
             onToggle={this.toggleTodo}
