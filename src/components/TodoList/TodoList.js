@@ -1,24 +1,35 @@
-import React, { Component } from 'react'
+import React from 'react'
 import TodoItem from '../TodoItem/TodoItem';
+import { connect } from 'react-redux';
+import { deleteTodo, toggleTodo } from '../../store/actions/todos';
 
-export default class TodoList extends Component {
-  render() {
-    const todoData = this.props.todos;
-    return (
+function TodoList({ todos, onItemToggle, onItemDelete, onItemEdit }) {
+  return (
       <div>
-        {
-          todoData.map((item) => {
-          return (
-            <TodoItem 
-              key={item.id}
-              item={item}
-              onToggle={this.props.onToggle}
-              onDelete={this.props.onDelete}
-            />
-            )
-          })
-        }
+          {todos.map((item) => (
+              <TodoItem
+                  key={item.id}
+                  item={item}
+                  onItemToggle={onItemToggle}
+                  onItemDelete={onItemDelete}
+              />
+          ))}
       </div>
-    )
-  }
+  );
 }
+
+
+
+function mapStateToProps({todos}) {
+  return {
+      todos
+  };
+}
+
+const mapDispatchToProps = {
+  onItemDelete: deleteTodo,
+  onItemToggle: toggleTodo
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+

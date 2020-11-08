@@ -1,23 +1,35 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
+import { createTodo } from '../../store/actions/todos';
 import classes from './TodoForm.module.css';
 
-export default class TodoForm extends Component {
+function TodoForm({createTodo}) {
+  const [title, setTitle] = useState('');
 
-  render() {
-    return (
-      <Fragment>
-        <form className={classes.TodoForm} onSubmit={this.props.addTodo}>
+  const inputHandler = ({target}) => setTitle(target.value);
+  
+  const addTodo = (e) => {
+    e.preventDefault();
+      createTodo(title);
+      setTitle('');
+  }
+  return (
+    <Fragment>
+      <form className={classes.TodoForm} onSubmit={addTodo}>
           <input 
             type="text" 
             placeholder="New Task" 
-            onChange={this.props.handleInput} 
-            value={this.props.task.title}
+            onChange={inputHandler} 
+            value={title}
           />
           <button>
             <i className="fas fa-plus"></i>
           </button>
         </form>
-      </Fragment>
-    )
-  }
+    </Fragment>
+  )
 }
+
+const mapDispatchToProps = {createTodo};
+
+export default connect(null, mapDispatchToProps)(TodoForm);
