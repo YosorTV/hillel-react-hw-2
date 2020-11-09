@@ -3,7 +3,7 @@ import TodoItem from '../TodoItem/TodoItem';
 import { connect } from 'react-redux';
 import { deleteTodo, toggleTodo } from '../../store/actions/todos';
 
-function TodoList({ todos, onItemToggle, onItemDelete, onItemEdit }) {
+function TodoList({ todos, onItemToggle, onItemDelete }) {
   return (
       <div>
           {todos.map((item) => (
@@ -17,8 +17,6 @@ function TodoList({ todos, onItemToggle, onItemDelete, onItemEdit }) {
       </div>
   );
 }
-
-
 
 function mapStateToProps({todos}) {
   return {
