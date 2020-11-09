@@ -6,7 +6,7 @@ const todoTemplate = title => ({title,isDone: false});
 
 // action get todos
 export const ACTION_SET_TODOS = 'ACTION_SET_TODOS';
-    const setAction = data => actionTypeCreator(ACTION_SET_TODOS, data);
+    const setAction = actionTypeCreator(ACTION_SET_TODOS);
 export const getTodos = () => dispatch => 
     todoApi.get().then(({data}) => dispatch(setAction(data)));
 
