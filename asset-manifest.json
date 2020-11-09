@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/hillel-react-hw-2/static/css/main.49ca0368.chunk.css",
-    "main.js": "/hillel-react-hw-2/static/js/main.34ed6556.chunk.js",
-    "main.js.map": "/hillel-react-hw-2/static/js/main.34ed6556.chunk.js.map",
+    "main.js": "/hillel-react-hw-2/static/js/main.2e574f27.chunk.js",
+    "main.js.map": "/hillel-react-hw-2/static/js/main.2e574f27.chunk.js.map",
     "runtime-main.js": "/hillel-react-hw-2/static/js/runtime-main.5853a769.js",
     "runtime-main.js.map": "/hillel-react-hw-2/static/js/runtime-main.5853a769.js.map",
     "static/js/2.5100359b.chunk.js": "/hillel-react-hw-2/static/js/2.5100359b.chunk.js",
     "static/js/2.5100359b.chunk.js.map": "/hillel-react-hw-2/static/js/2.5100359b.chunk.js.map",
     "index.html": "/hillel-react-hw-2/index.html",
-    "precache-manifest.d17a697b774d775fd2aa8b3ef44c6140.js": "/hillel-react-hw-2/precache-manifest.d17a697b774d775fd2aa8b3ef44c6140.js",
+    "precache-manifest.379bfb4981e095a39bfbabf087853bdf.js": "/hillel-react-hw-2/precache-manifest.379bfb4981e095a39bfbabf087853bdf.js",
     "service-worker.js": "/hillel-react-hw-2/service-worker.js",
     "static/css/main.49ca0368.chunk.css.map": "/hillel-react-hw-2/static/css/main.49ca0368.chunk.css.map",
     "static/js/2.5100359b.chunk.js.LICENSE.txt": "/hillel-react-hw-2/static/js/2.5100359b.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5853a769.js",
     "static/js/2.5100359b.chunk.js",
     "static/css/main.49ca0368.chunk.css",
-    "static/js/main.34ed6556.chunk.js"
+    "static/js/main.2e574f27.chunk.js"
   ]
 }
